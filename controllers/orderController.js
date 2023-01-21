@@ -3,6 +3,8 @@ const Product = require("../models/productModel");
 const ErrorHander = require("../utils/errorhander");
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 // Create new Order
+
+
 exports.newOrder = catchAsyncErrors(async (req, res, next) => {
     const {
       shippingInfo,
@@ -33,8 +35,10 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
   });
 
   // get Single Order
+
   //populate means it will instate of getting only order it will go to user id and name and email for us
-exports.getSingleOrder = catchAsyncErrors(async (req, res, next) => {
+
+  exports.getSingleOrder = catchAsyncErrors(async (req, res, next) => {
     const order = await Order.findById(req.params.id).populate(
       "user",
       "name email"
