@@ -7,6 +7,12 @@ for pagination limit is default 20
 for sort you can just make price price[gt]=100  price[lt]=200 you get products
 for filter you can apply filter at params ex: url?name=laptop
 
+
+## Get Overall products --users
+localhost:8080/api/v1/allproducts
+
+to get all products without pagination
+
 ## Create a product(post)
 localhost:8080/api/v1/products/new
 

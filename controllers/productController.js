@@ -32,6 +32,21 @@ exports.getAllProducts = catchAsyncErrors(async (req, res) => {
   });
 });
 
+// Get Product overallproducs
+exports.GetOverallProducts = catchAsyncErrors(async (req, res, next) => {
+  const product = await Product.find();
+
+  if (!product) {
+    return next(new ErrorHander("Product not found", 404));
+  }
+
+  res.status(200).json({
+    success: true,
+    product
+    
+  });
+});
+
 // Get Product Details
 exports.getProductDetails = catchAsyncErrors(async (req, res, next) => {
   const product = await Product.findById(req.params.id);
